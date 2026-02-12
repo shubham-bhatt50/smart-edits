@@ -258,7 +258,15 @@ export default function EditTaskbar() {
           /* SCREEN DETAIL MODE (New State - "Screen 1") */
           <>
             <div className="flex items-center gap-2">
-              <span className="text-white text-sm font-medium px-4">
+              {/* Back button - goes to previous page */}
+              <button
+                onClick={() => router.back()}
+                className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+              >
+                <IconArrowLeft className="w-5 h-5 text-white" strokeWidth={2} />
+              </button>
+
+              <span className="text-white text-sm font-medium px-2">
                 {getMinimizedLabel()}
               </span>
             </div>
