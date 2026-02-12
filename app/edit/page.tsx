@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import StatsCards from '@/components/StatsCards';
@@ -26,11 +27,15 @@ export default function EditPage() {
           </div>
         </div>
 
-        {/* Edit taskbar */}
-        <EditTaskbar />
+        {/* Edit taskbar - wrapped in Suspense for useSearchParams */}
+        <Suspense fallback={null}>
+          <EditTaskbar />
+        </Suspense>
 
-        {/* Edit sidebar */}
-        <EditSidebar />
+        {/* Edit sidebar - wrapped in Suspense for useSearchParams */}
+        <Suspense fallback={null}>
+          <EditSidebar />
+        </Suspense>
       </div>
     </EditSidebarProvider>
   );
